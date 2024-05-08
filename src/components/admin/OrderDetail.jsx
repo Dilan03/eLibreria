@@ -7,7 +7,7 @@ const OrderDetail = () => {
     // console.log(getAllOrder)
     return (
         <div>
-            <div>
+            <div className="bg-white">
                 <div className="py-5">
                     {/* text  */}
                     <h1 className=" text-xl text-pink-300 font-bold">All Order</h1>
@@ -167,7 +167,7 @@ const OrderDetail = () => {
                                                         {order.date}
                                                     </td>
 
-                                                    <td onClick={()=> orderDelete(order.id)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer ">
+                                                    <td onClick={() => orderDelete(order.id)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer ">
                                                         Delete
                                                     </td>
                                                 </tr>

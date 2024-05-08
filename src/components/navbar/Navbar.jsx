@@ -21,7 +21,7 @@ const Navbar = () => {
 
     // navList Data
     const navList = (
-        <ul className="flex space-x-3 text-white font-medium text-md px-5 ">
+        <ul className="flex space-x-3 text-brown-dark font-medium text-md px-5 ">
             {/* Home */}
             <li>
                 <Link to={'/'}>Home</Link>
@@ -66,23 +66,25 @@ const Navbar = () => {
         </ul>
     )
     return (
-        <nav className="bg-pink-600 sticky top-0">
+        <nav className="bg-white sticky top-0 border-b border-brown-dark mb-4 pt-3">
             {/* main  */}
-            <div className="lg:flex lg:justify-between items-center py-3 lg:px-3 ">
-                {/* left  */}
-                <div className="left py-3 lg:py-0">
-                    <Link to={'/'}>
-                        <h2 className=" font-bold text-white text-2xl text-center">E-Bharat</h2>
-                    </Link>
-                </div>
+            <div className="container px-5 py-5 mx-auto">
+                <div className="lg:flex lg:justify-between items-center lg:px-3 ">
+                    {/* left  */}
+                    <div className="left py-3 lg:py-0">
+                        <Link to={'/'}>
+                            <img className="h-[50px]" src="../img/ciculillo.svg" alt="" />
+                        </Link>
+                    </div>
+                    <SearchBar />
+                    {/* right  */}
+                    <div className="right flex justify-center mb-4 lg:mb-0">
+                        {navList}
+                    </div>
 
-                {/* right  */}
-                <div className="right flex justify-center mb-4 lg:mb-0">
-                    {navList}
-                </div>
+                    {/* Search Bar  */}
 
-                {/* Search Bar  */}
-                <SearchBar />
+                </div>
             </div>
         </nav>
     );

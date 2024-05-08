@@ -8,28 +8,31 @@ import Loader from "../../components/loader/Loader";
 
 const categoryList = [
     {
-        name: 'fashion'
+        name: 'Ficción'
     },
     {
-        name: 'shirt'
+        name: 'No ficción'
     },
     {
-        name: 'jacket'
+        name: 'Biográfico'
     },
     {
-        name: 'mobile'
+        name: 'Fantasía'
     },
     {
-        name: 'laptop'
+        name: 'Misterio'
     },
     {
-        name: 'shoes'
+        name: 'Ciencia ficción'
     },
     {
-        name: 'home'
+        name: 'Adultos'
     },
     {
-        name: 'books'
+        name: 'Adolescentes'
+    },
+    {
+        name: 'Niños'
     }
 ]
 
@@ -47,7 +50,7 @@ const AddProductPage = () => {
         productImageUrl: "",
         category: "",
         description: "",
-        quantity : 1,
+        quantity: 1,
         time: Timestamp.now(),
         date: new Date().toLocaleString(
             "en-US",
@@ -63,20 +66,20 @@ const AddProductPage = () => {
     // Add Product Function
     const addProductFunction = async () => {
         if (product.title == "" || product.price == "" || product.productImageUrl == "" || product.category == "" || product.description == "") {
-            return toast.error("all fields are required")
+            return toast.error("todos los campos son requeridos")
         }
 
         setLoading(true);
         try {
             const productRef = collection(fireDB, 'products');
             await addDoc(productRef, product)
-            toast.success("Add product successfully");
+            toast.success("producto añadido exitosamente");
             navigate('/admin-dashboard')
             setLoading(false)
         } catch (error) {
             console.log(error);
             setLoading(false)
-            toast.error("Add product failed");
+            toast.error("No se pudo añadir el producto");
         }
 
     }
@@ -90,7 +93,7 @@ const AddProductPage = () => {
                     {/* Top Heading  */}
                     <div className="mb-5">
                         <h2 className='text-center text-2xl font-bold text-pink-500 '>
-                            Add Product
+                            Añadir producto
                         </h2>
                     </div>
 
@@ -156,7 +159,7 @@ const AddProductPage = () => {
                                 })
                             }}
                             className="w-full px-1 py-2 text-pink-300 bg-pink-50 border border-pink-200 rounded-md outline-none  ">
-                            <option disabled>Select Product Category</option>
+                            <option disabled>Selecciona la categoría</option>
                             {categoryList.map((value, index) => {
                                 const { name } = value
                                 return (
@@ -185,9 +188,9 @@ const AddProductPage = () => {
                         <button
                             onClick={addProductFunction}
                             type='button'
-                            className='bg-pink-500 hover:bg-pink-600 w-full text-white text-center py-2 font-bold rounded-md '
+                            className='bg-red hover:bg-pink-600 w-full text-white text-center py-2 font-Bitter font-semibold '
                         >
-                            Add Product
+                            Confirmar
                         </button>
                     </div>
                 </div>
