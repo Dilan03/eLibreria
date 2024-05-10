@@ -44,16 +44,16 @@ const Login = () => {
                 const data = onSnapshot(q, (QuerySnapshot) => {
                     let user;
                     QuerySnapshot.forEach((doc) => user = doc.data());
-                    localStorage.setItem("users", JSON.stringify(user) )
+                    localStorage.setItem("users", JSON.stringify(user))
                     setUserLogin({
                         email: "",
                         password: ""
                     })
                     toast.success("Login Successfully");
                     setLoading(false);
-                    if(user.role === "user") {
+                    if (user.role === "user") {
                         navigate('/user-dashboard');
-                    }else{
+                    } else {
                         navigate('/admin-dashboard');
                     }
                 });
@@ -70,67 +70,80 @@ const Login = () => {
 
     }
     return (
-        <div className='flex justify-center items-center h-screen'>
+        <div className='flex flex-col justify-center items-center h-screen'>
             {loading && <Loader />}
             {/* Login Form  */}
-            <div className="login_Form bg-pink-50 px-8 py-6 border border-pink-100 rounded-xl shadow-md">
+            <div className="login_Form bg-pink px-16 py-8 border border-pink-100 shadow-md mb-[50px]">
 
                 {/* Top Heading  */}
                 <div className="mb-5">
-                    <h2 className='text-center text-2xl font-bold text-pink-500 '>
+                    <h2 className='text-center text-4xl font-Bitter font-semibold text-brown-dark pb-10'>
                         Login
                     </h2>
                 </div>
 
                 {/* Input One  */}
                 <div className="mb-3">
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder='Email Address'
-                        value={userLogin.email}
-                        onChange={(e) => {
-                            setUserLogin({
-                                ...userLogin,
-                                email: e.target.value
-                            })
-                        }}
-                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200'
-                    />
+                    <span className="flex flex-col">
+                        <label htmlFor="email" className="font-Bitter font-semibold text-brown-dark">Correo electronico</label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder='Ingresa tu correo'
+                            value={userLogin.email}
+                            onChange={(e) => {
+                                setUserLogin({
+                                    ...userLogin,
+                                    email: e.target.value
+                                })
+                            }}
+                            className='bg-pink-50 border border-pink-200 px-2 py-2 w-96  outline-none placeholder-pink-200 mb-8'
+                        />
+                    </span>
                 </div>
 
                 {/* Input Two  */}
                 <div className="mb-5">
-                    <input
-                        type="password"
-                        placeholder='Password'
-                        value={userLogin.password}
-                        onChange={(e) => {
-                            setUserLogin({
-                                ...userLogin,
-                                password: e.target.value
-                            })
-                        }}
-                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200'
-                    />
+                    <span className="flex flex-col">
+                        <label htmlFor="password" className="font-Bitter font-semibold text-brown-dark">Contraseña</label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder='Ingresa tu contraseña'
+                            value={userLogin.password}
+                            onChange={(e) => {
+                                setUserLogin({
+                                    ...userLogin,
+                                    password: e.target.value
+                                })
+                            }}
+                            className='bg-pink-50 border border-pink-200 px-2 py-2 w-96  outline-none placeholder-pink-200 mb-8'
+                        />
+                    </span>
                 </div>
 
                 {/* Signup Button  */}
-                <div className="mb-5">
+                <div className="mb-5 mx-auto w-1/2 ">
                     <button
                         type='button'
                         onClick={userLoginFunction}
-                        className='bg-pink-500 hover:bg-pink-600 w-full text-white text-center py-2 font-bold rounded-md '
+                        className='font-Bitter font-semibold text-trueWite bg-red inline-block text-2xl px-3 hover:bg-pink-600 w-full text-center py-2'
                     >
                         Login
                     </button>
                 </div>
 
-                <div>
-                    <h2 className='text-black'>Don't Have an account <Link className=' text-pink-500 font-bold' to={'/signup'}>Signup</Link></h2>
+                <div className="">
+                    <h2 className='font-Bitter font-regular text-brown-dark'>No tienes una cuenta? <Link className='font-Bitter font-semibold text-brown-dark my-4' to={'/signup'}>Registrarse</Link></h2>
                 </div>
 
             </div>
+            <div className="relative flex justify-between w-full">
+                <img className="absolute h-[150px] left-40 bottom-6" src="../img/pila_libros1.png" alt="" />
+                <img className="absolute h-[350px] right-20 bottom-0" src="../img/monillo1.png" alt="" />
+            </div>
+            <div className="border-b border-brown-dark w-full "></div>
         </div>
     );
 }

@@ -15,12 +15,12 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
             <Button
                 type="button"
                 onClick={handleOpen}
-                className="w-full px-4 py-3 text-center text-gray-100 bg-pink-600 border border-transparent dark:border-gray-700 hover:border-pink-500 hover:text-pink-700 hover:bg-pink-100 rounded-xl"
+                className="w-full px-4 py-3 text-center text-gray-100 bg-pink-600 border border-transparent dark:border-gray-700 hover:border-pink-500 hover:text-pink-700 hover:bg-pink-100"
             >
-                Buy now
+                Comprar
             </Button>
             <Dialog open={open} handler={handleOpen} className=" bg-pink-50">
-                <DialogBody className="">
+                <DialogBody className="bg-pink">
                     <div className="mb-3">
                         <input
                             type="text"

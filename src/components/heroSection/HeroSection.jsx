@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const HeroSection = () => {
     //const navigate = useNavigate();
     return (
-        <div className="container px-5 py-5 mx-auto bg-white">
+        <div className="container px-5 pt-20 mx-auto bg-white h-screen">
             <div className="flex">
                 <div>
                     <h1 className="font-Bitter font-extrabold text-brown-dark text-8xl mt-[150px]">HOLA VENDO LIBROS </h1>
@@ -12,7 +12,7 @@ const HeroSection = () => {
                         <Link to={'/allproduct'}>Catálogo</Link>
                     </li>
                 </div>
-                <img className=" h-[650px] " src="../img/HeroImagen.png" alt="" />
+                <img className=" h-[500px] " src="../img/HeroImagen.png" alt="" />
             </div>
         </div>
     );

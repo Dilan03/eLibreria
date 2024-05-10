@@ -8,28 +8,31 @@ import Loader from "../../components/loader/Loader";
 
 const categoryList = [
     {
-        name: 'fashion'
+        name: 'Ficción'
     },
     {
-        name: 'shirt'
+        name: 'No ficción'
     },
     {
-        name: 'jacket'
+        name: 'Biográfico'
     },
     {
-        name: 'mobile'
+        name: 'Fantasía'
     },
     {
-        name: 'laptop'
+        name: 'Misterio'
     },
     {
-        name: 'shoes'
+        name: 'Ciencia ficción'
     },
     {
-        name: 'home'
+        name: 'Adultos'
     },
     {
-        name: 'books'
+        name: 'Adolescentes'
+    },
+    {
+        name: 'Niños'
     }
 ]
 
@@ -72,7 +75,7 @@ const UpdateProductPage = () => {
                 productImageUrl: product?.productImageUrl,
                 category: product?.category,
                 description: product?.description,
-                quantity : product?.quantity,
+                quantity: product?.quantity,
                 time: product?.time,
                 date: product?.date
             })

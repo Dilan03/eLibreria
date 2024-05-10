@@ -11,8 +11,9 @@ export default withMT({
       'trueWite': '#FFFFFF',
       'pink': '#FEC0CC',
       'pinkplace': '#E66161',
-      'bubble-gum': '#ff77e9',
-      'bermuda': '#78dcca',
+      'blue': '#005ED4',
+      'gray-c': '#DBCED1'
+
     },
     extend: {
       fontFamily: {
