@@ -71,10 +71,12 @@ const UpdateProductPage = () => {
             const product = productTemp.data();
             setProduct({
                 title: product?.title,
+                autor: product?.autor,
                 price: product?.price,
                 productImageUrl: product?.productImageUrl,
                 category: product?.category,
                 description: product?.description,
+                stock: product?.stock,
                 quantity: product?.quantity,
                 time: product?.time,
                 date: product?.date
@@ -114,7 +116,7 @@ const UpdateProductPage = () => {
                     {/* Top Heading  */}
                     <div className="mb-5">
                         <h2 className='text-center text-2xl font-bold text-pink-500 '>
-                            Update Product
+                            Actualizar informacion del producto
                         </h2>
                     </div>
 
@@ -131,6 +133,22 @@ const UpdateProductPage = () => {
                                 })
                             }}
                             placeholder='Product Title'
+                            className='bg-pink-50 border text-pink-300 border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-300'
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <input
+                            type="text"
+                            name="autor"
+                            value={product.autor}
+                            onChange={(e) => {
+                                setProduct({
+                                    ...product,
+                                    autor: e.target.value
+                                })
+                            }}
+                            placeholder='Autor del libro'
                             className='bg-pink-50 border text-pink-300 border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-300'
                         />
                     </div>
@@ -190,6 +208,22 @@ const UpdateProductPage = () => {
                         </select>
                     </div>
 
+                    <div className="mb-3">
+                        <input
+                            type="number"
+                            name="stock"
+                            value={product.stock}
+                            onChange={(e) => {
+                                setProduct({
+                                    ...product,
+                                    stock: e.target.value
+                                })
+                            }}
+                            placeholder='Stock disponible'
+                            className='bg-pink-50 border text-pink-300 border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-300'
+                        />
+                    </div>
+
                     {/* Input Five  */}
                     <div className="mb-3">
                         <textarea
@@ -204,14 +238,16 @@ const UpdateProductPage = () => {
                         </textarea>
                     </div>
 
+
+
                     {/* Update Product Button  */}
                     <div className="mb-3">
                         <button
                             onClick={updateProduct}
                             type='button'
-                            className='bg-pink-500 hover:bg-pink-600 w-full text-white text-center py-2 font-bold rounded-md '
+                            className='bg-red hover:bg-pink-600 w-full text-white text-center py-2 font-bold rounded-md '
                         >
-                            Update Product
+                            Confirmar
                         </button>
                     </div>
                 </div>

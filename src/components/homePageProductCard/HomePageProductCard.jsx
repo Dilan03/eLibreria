@@ -22,14 +22,14 @@ const HomePageProductCard = () => {
     // add to cart function
     const addCart = (item) => {
         dispatch(addToCart(item));
-        toast.success("Added to cart")
+        toast.success("Añadido")
     }
 
 
     // delete from cart function
     const deleteCart = (item) => {
         dispatch(deleteFromCart(item));
-        toast.success("Delete cart")
+        toast.success("Eliminado")
     }
 
     useEffect(() => {

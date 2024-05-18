@@ -2,6 +2,8 @@ import { useContext } from "react";
 import Layout from "../../components/layout/Layout";
 import myContext from "../../context/myContext";
 import Loader from "../../components/loader/Loader";
+import { useNavigate } from "react-router";
+
 
 const UserDashboard = () => {
     // user
@@ -10,6 +12,7 @@ const UserDashboard = () => {
     const context = useContext(myContext);
     const { loading, getAllOrder } = context
     // console.log(getAllOrder)
+    const navigate = useNavigate();
 
     // console.log(user)
     return (
@@ -20,14 +23,14 @@ const UserDashboard = () => {
                     {/* main  */}
                     <div className=" bg-pink-50 py-5 rounded-xl border border-pink-100">
                         {/* image  */}
-                        <div className="flex justify-center">
-                            <img src="https://cdn-icons-png.flaticon.com/128/2202/2202112.png" alt="" />
+                        <div className="flex justify-center h-[150px]">
+                            <img src="https://www.nicepng.com/png/full/128-1280406_view-user-icon-png-user-circle-icon-png.png" alt="" />
                         </div>
                         {/* text  */}
                         <div className="">
                             {/* Name  */}
                             <h1 className=" text-center text-lg">
-                                <span className=" font-bold">Name : </span>
+                                <span className=" font-bold">Nombre : </span>
                                 {user?.name}
                             </h1>
 
@@ -39,15 +42,19 @@ const UserDashboard = () => {
 
                             {/* Date  */}
                             <h1 className=" text-center text-lg">
-                                <span className=" font-bold">Date : </span>
+                                <span className=" font-bold">Fecha de registro : </span>
                                 {user?.date}
                             </h1>
 
                             {/* Role  */}
                             <h1 className=" text-center text-lg">
-                                <span className=" font-bold">Role : </span>
+                                <span className=" font-bold">Rol : </span>
                                 {user?.role}
                             </h1>
+
+                            <td onClick={() => navigate(`/updateuserinfo/ ${user.uid}`)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-green-500 cursor-pointer ">
+                                Edit
+                            </td>
                         </div>
                     </div>
                 </div>
@@ -57,10 +64,10 @@ const UserDashboard = () => {
                     {/* main 1 */}
                     <div className="mx-auto my-4 max-w-6xl px-2 md:my-6 md:px-0">
                         {/* text  */}
-                        <h2 className=" text-2xl lg:text-3xl font-bold">Order Details</h2>
+                        <h2 className=" text-2xl lg:text-3xl font-bold">Pedidos</h2>
 
                         <div className="flex justify-center relative top-10">
-                        {loading && <Loader/>}
+                            {loading && <Loader />}
                         </div>
 
                         {/* main 2 */}
@@ -70,7 +77,7 @@ const UserDashboard = () => {
                                 <div key={index}>
                                     {order.cartItems.map((item, index) => {
                                         // console.log('item', item);
-                                        const { id, date, quantity, price, title, productImageUrl, category } = item
+                                        const { date, quantity, price, title, productImageUrl, category } = item
                                         // console.log('order', order)
                                         const { status } = order
                                         return (
@@ -82,7 +89,7 @@ const UserDashboard = () => {
                                                         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-1">
                                                             <div className="mb-4">
                                                                 <div className="text-sm font-semibold text-black">Order Id</div>
-                                                                <div className="text-sm font-medium text-gray-900">#{id}</div>
+                                                                <div className="text-sm font-medium text-gray-900">#{order.id}</div>
                                                             </div>
 
                                                             <div className="mb-4">
@@ -92,7 +99,7 @@ const UserDashboard = () => {
 
                                                             <div className="mb-4">
                                                                 <div className="text-sm font-semibold">Total Amount</div>
-                                                                <div className="text-sm font-medium text-gray-900">₹ {price * quantity}</div>
+                                                                <div className="text-sm font-medium text-gray-900">$ {price * quantity}</div>
                                                             </div>
 
                                                             <div className="mb-4">

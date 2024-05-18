@@ -40,12 +40,12 @@ const ProductInfo = () => {
     const addCart = (item) => {
         // console.log(item)
         dispatch(addToCart(item));
-        toast.success("Add to cart")
+        toast.success("Añadido")
     }
 
     const deleteCart = (item) => {
         dispatch(deleteFromCart(item));
-        toast.success("Delete cart")
+        toast.success("Eliminado")
     }
 
     // console.log(cartItems)

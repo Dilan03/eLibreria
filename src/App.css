@@ -53,3 +53,7 @@ body {
 li {
   list-style-type: none;
 }
+
+tr {
+  border: 1px black solid;
+}

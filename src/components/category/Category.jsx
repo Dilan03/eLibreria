@@ -36,7 +36,7 @@ const Category = () => {
     const navigate = useNavigate();
     return (
         <div>
-            <div className="flex flex-col mt-5 w-[300px] h-100 bg-gray-c border border-brown-dark ml-4 py-10">
+            <div className="flex flex-col mt-5 w-[300px] h-100 bg-gray-c border border-brown-dark mx-6 py-10">
                 <h2 className="font-Bitter font-semibold text-2xl text-brown-dark ml-8 mb-4">Géneros</h2>
                 <div className="flex overflow-x-scroll lg:justify-center  hide-scroll-bar">
                     {/* main 2  */}

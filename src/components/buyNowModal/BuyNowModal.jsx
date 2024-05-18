@@ -32,7 +32,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                     name: e.target.value
                                 })
                             }}
-                            placeholder='Enter your name'
+                            placeholder='Nombre'
                             className='bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300'
                         />
                     </div>
@@ -47,7 +47,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                     address: e.target.value
                                 })
                             }}
-                            placeholder='Enter your address'
+                            placeholder='Ingresa calle, num y colonia'
                             className='bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300'
                         />
                     </div>
@@ -63,7 +63,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                     pincode: e.target.value
                                 })
                             }}
-                            placeholder='Enter your pincode'
+                            placeholder='Ingresa código postal'
                             className='bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 text-pink-600 placeholder-pink-300'
                         />
                     </div>
@@ -79,8 +79,22 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                     mobileNumber: e.target.value
                                 })
                             }}
-                            placeholder='Enter your mobileNumber'
+                            placeholder='Ingresa numero de tarjeta'
                             className='bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300'
+                        />
+                    </div>
+
+                    <div className="flex">
+                        <input
+                            type="text"
+                            placeholder='Fecha de expiracion'
+                            className='bg-pink-50 border border-pink-200 px-2 py-2 rounded-md mr-5 outline-none text-pink-600 placeholder-pink-300 mb-5'
+                        />
+
+                        <input
+                            type="text"
+                            placeholder='CVV'
+                            className='bg-pink-50 border border-pink-200 px-2 py-2 rounded-md mr-5 mb-5 outline-none text-pink-600 placeholder-pink-300'
                         />
                     </div>
 
@@ -92,9 +106,9 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                 handleOpen();
                                 buyNowFunction();
                             }}
-                            className="w-full px-4 py-3 text-center text-gray-100 bg-pink-600 border border-transparent dark:border-gray-700 rounded-lg"
+                            className="w-full px-4 py-3 text-center bg-red text-gray-100 border border-transparent dark:border-gray-700 rounded-lg"
                         >
-                            Buy now
+                            Confirmar compra
                         </Button>
                     </div>
 

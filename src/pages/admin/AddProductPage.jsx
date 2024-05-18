@@ -46,10 +46,12 @@ const AddProductPage = () => {
     // product state
     const [product, setProduct] = useState({
         title: "",
+        autor: "",
         price: "",
         productImageUrl: "",
         category: "",
         description: "",
+        stock: null,
         quantity: 1,
         time: Timestamp.now(),
         date: new Date().toLocaleString(
@@ -65,7 +67,7 @@ const AddProductPage = () => {
 
     // Add Product Function
     const addProductFunction = async () => {
-        if (product.title == "" || product.price == "" || product.productImageUrl == "" || product.category == "" || product.description == "") {
+        if (product.title == "" || product.autor == "" || product.price == "" || product.productImageUrl == "" || product.category == "" || product.description == "") {
             return toast.error("todos los campos son requeridos")
         }
 
@@ -109,7 +111,23 @@ const AddProductPage = () => {
                                     title: e.target.value
                                 })
                             }}
-                            placeholder='Product Title'
+                            placeholder='Titulo del libro'
+                            className='bg-pink-50 border text-pink-300 border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-300'
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <input
+                            type="text"
+                            name="autor"
+                            value={product.autor}
+                            onChange={(e) => {
+                                setProduct({
+                                    ...product,
+                                    autor: e.target.value
+                                })
+                            }}
+                            placeholder='Autor del libro'
                             className='bg-pink-50 border text-pink-300 border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-300'
                         />
                     </div>
@@ -118,7 +136,7 @@ const AddProductPage = () => {
                     <div className="mb-3">
                         <input
                             type="number"
-                            name="price"
+                            name="Precio"
                             value={product.price}
                             onChange={(e) => {
                                 setProduct({
@@ -135,7 +153,7 @@ const AddProductPage = () => {
                     <div className="mb-3">
                         <input
                             type="text"
-                            name="productImageUrl"
+                            name="Url de la imagen"
                             value={product.productImageUrl}
                             onChange={(e) => {
                                 setProduct({
@@ -167,6 +185,22 @@ const AddProductPage = () => {
                                 )
                             })}
                         </select>
+                    </div>
+
+                    <div className="mb-3">
+                        <input
+                            type="number"
+                            name="stock"
+                            value={product.stock}
+                            onChange={(e) => {
+                                setProduct({
+                                    ...product,
+                                    stock: e.target.value
+                                })
+                            }}
+                            placeholder='Stock disponible'
+                            className='bg-pink-50 border text-pink-300 border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-300'
+                        />
                     </div>
 
                     {/* Input Five  */}

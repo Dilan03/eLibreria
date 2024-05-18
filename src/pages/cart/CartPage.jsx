@@ -3,13 +3,17 @@ import Layout from "../../components/layout/Layout";
 import { Trash } from 'lucide-react'
 import { decrementQuantity, deleteFromCart, incrementQuantity } from "../../redux/cartSlice";
 import toast from "react-hot-toast";
-import { useEffect, useState } from "react";
+import myContext from "../../context/myContext";
+import { useEffect, useState, useContext, } from "react";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { fireDB } from "../../firebase/FirebaseConfig";
 import BuyNowModal from "../../components/buyNowModal/BuyNowModal";
 import { Navigate } from "react-router";
 
 const CartPage = () => {
+    const context = useContext(myContext);
+    const { productDecrementStock } = context;
+
     const cartItems = useSelector((state) => state.cart);
     const dispatch = useDispatch();
 
@@ -29,7 +33,7 @@ const CartPage = () => {
     // const cartQuantity = cartItems.length;
 
     const cartItemTotal = cartItems.map(item => item.quantity).reduce((prevValue, currValue) => prevValue + currValue, 0);
-
+    //const ItemStock = cartItems.map(item => item.stock).reduce((prevValue, currValue) => prevValue + currValue, 0);
     const cartTotal = cartItems.map(item => item.price * item.quantity).reduce((prevValue, currValue) => prevValue + currValue, 0);
 
 
@@ -42,7 +46,7 @@ const CartPage = () => {
 
     // Buy Now Function
     const [addressInfo, setAddressInfo] = useState({
-        name: "",
+        name: user.name,
         address: "",
         pincode: "",
         mobileNumber: "",
@@ -69,7 +73,7 @@ const CartPage = () => {
             addressInfo,
             email: user.email,
             userid: user.uid,
-            status: "confirmed",
+            status: "Pendiente",
             time: Timestamp.now(),
             date: new Date().toLocaleString(
                 "en-US",
@@ -89,12 +93,17 @@ const CartPage = () => {
                 pincode: "",
                 mobileNumber: "",
             })
-            toast.success("Order Placed Successfull")
+            cartItems.map((item) => {
+                const { id, quantity } = item
+                productDecrementStock(id, quantity)
+            })
+            toast.success("Pedido realizado exitosamente")
         } catch (error) {
             console.log(error)
         }
 
     }
+
     return (
         <Layout>
             <div className="container mx-auto px-4 max-w-7xl lg:px-0">
@@ -110,6 +119,7 @@ const CartPage = () => {
                                     <>
                                         {cartItems.map((item, index) => {
                                             const { id, title, price, productImageUrl, quantity } = item
+
                                             return (
                                                 <div key={index} className="">
                                                     <li className="flex py-8 sm:py-10 border-b border-brown-dark">

@@ -9,22 +9,22 @@ const UserDetail = () => {
             <div>
                 <div className="py-5 flex justify-between items-center">
                     {/* text  */}
-                    <h1 className=" text-xl text-pink-300 font-bold">All User</h1>
+                    <h1 className=" text-xl text-pink-300 font-bold">Todos los usuarios</h1>
                 </div>
 
                 {/* table  */}
-                <div className="w-full overflow-x-auto">
+                <div className="w-full overflow-x-auto mb-[100px]">
                     <table className="w-full text-left border border-collapse sm:border-separate border-pink-100 text-pink-400" >
                         <tbody>
                             <tr>
                                 <th scope="col"
                                     className="h-12 px-6 text-md border-l first:border-l-0 border-pink-100 text-slate-700 bg-slate-100 font-bold fontPara">
-                                    S.No.
+                                    No.
                                 </th>
 
                                 <th scope="col"
                                     className="h-12 px-6 text-md border-l first:border-l-0 border-pink-100 text-slate-700 bg-slate-100 font-bold fontPara">
-                                    Name
+                                    Nombre
                                 </th>
 
                                 <th scope="col"
@@ -34,17 +34,17 @@ const UserDetail = () => {
 
                                 <th scope="col"
                                     className="h-12 px-6 text-md border-l first:border-l-0 border-pink-100 text-slate-700 bg-slate-100 font-bold fontPara">
-                                    Uid
+                                    Usuario id
                                 </th>
 
                                 <th scope="col"
                                     className="h-12 px-6 text-md border-l first:border-l-0 border-pink-100 text-slate-700 bg-slate-100 font-bold fontPara">
-                                   Role
+                                    Rol
                                 </th>
 
                                 <th scope="col"
                                     className="h-12 px-6 text-md border-l first:border-l-0 border-pink-100 text-slate-700 bg-slate-100 font-bold fontPara">
-                                    Date
+                                    Fecha
                                 </th>
 
                             </tr>
