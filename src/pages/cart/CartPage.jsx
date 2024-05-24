@@ -64,7 +64,7 @@ const CartPage = () => {
     const buyNowFunction = () => {
         // validation 
         if (addressInfo.name === "" || addressInfo.address === "" || addressInfo.pincode === "" || addressInfo.mobileNumber === "") {
-            return toast.error("All Fields are required")
+            return toast.error("todos los campos son requridos")
         }
 
         // Order Info 

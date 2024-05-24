@@ -91,8 +91,11 @@ const ProductInfo = () => {
                                             <h2 className="max-w-xl mb-6 text-4xl font-semibold font-Bitter leading-loose tracking-wide text-black md:text-5xl dark:text-gray-300 mt-20">
                                                 {product?.title}
                                             </h2>
-                                            <h3 className="max-w-xl mb-6 text-2xl font-regular font-Lustria leading-loose tracking-wide text-gray-500 md:text-3xl dark:text-gray-300">
+                                            <h3 className="max-w-xl mb-6 text-l font-regular font-Lustria leading-loose tracking-wide text-gray-500 md:text-3xl dark:text-gray-300">
                                                 {product?.category}
+                                            </h3>
+                                            <h3 className="max-w-xl mb-6 text-2xl font-regular font-Lustria leading-loose tracking-wide text-gray-800 md:text-3xl dark:text-gray-700">
+                                                {product?.autor}
                                             </h3>
                                             <p className="inline-block text-2xl font-semibold text-gray-700 dark:text-gray-400 ">
                                                 <span className="text-3xl font-bold text-red font-Bitter">$ {product?.price}</span>
