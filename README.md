@@ -1,7 +1,7 @@
 # **E-libreria**
 
 This is a e-commerce bookstore application for the software project management class. 
-[visit site](https://e-libreria-46b75.web.app/)
+[Visit site](https://e-libreria-46b75.web.app/)
 
 ## Features
 
@@ -16,6 +16,10 @@ This is a e-commerce bookstore application for the software project management c
 - **Book Management (CRUD)**: Administrators can create, read, update, and delete book listings.
 - **User Management**: Administrators can manage user accounts, including editing details and handling user-related issues.
 - **Order Management**: Administrators can manage and oversee customer orders, including tracking and fulfillment.
+
+explore admin features when login:
+email: admin@admin.com
+pass: 123456
 
 ## **Technologies**
 
@@ -42,29 +46,29 @@ To play *Deroached*, follow these steps:
 
 To set up and run the e-commerce bookstore project locally, follow these steps:
 
-# 1. Clone the Repository
+1. Clone the Repository
 git clone https://github.com/Dilan03/eLibreria.git
 cd eLibreria
 
-# 2. Install Dependencies
+2. Install Dependencies
 npm install
-# or, if you prefer Yarn:
-# yarn install
+or, if you prefer Yarn:
+yarn install
 
-# 3. Set Up Firebase
-# - Go to the Firebase Console: https://console.firebase.google.com/
-# - Create a new project or use an existing one.
-# - Set up Authentication and Firestore Database.
-# - Obtain your Firebase configuration details from the Firebase Console.
-# - Create a `.env` file in the root of your project and add your Firebase configuration:
-#   VITE_FIREBASE_API_KEY=your_api_key
-#   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-#   VITE_FIREBASE_PROJECT_ID=your_project_id
-#   VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-#   VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-#   VITE_FIREBASE_APP_ID=your_app_id
+3. Set Up Firebase
+- Go to the Firebase Console: https://console.firebase.google.com/
+- Create a new project or use an existing one.
+- Set up Authentication and Firestore Database.
+- Obtain your Firebase configuration details from the Firebase Console.
+- Create a `.env` file in the root of your project and add your Firebase configuration:
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   VITE_FIREBASE_PROJECT_ID=your_project_id
+   VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
 
-# 4. Start the Development Server
+4. Start the Development Server
 npm run dev
-# or, if you prefer Yarn:
-# yarn dev
+or, if you prefer Yarn:
+ yarn dev
