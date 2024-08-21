@@ -88,22 +88,22 @@ const UserDashboard = () => {
                                                     <div className="p-8">
                                                         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-1">
                                                             <div className="mb-4">
-                                                                <div className="text-sm font-semibold text-black">Order Id</div>
+                                                                <div className="text-sm font-semibold text-black">Id del Pedido</div>
                                                                 <div className="text-sm font-medium text-gray-900">#{order.id}</div>
                                                             </div>
 
                                                             <div className="mb-4">
-                                                                <div className="text-sm font-semibold">Date</div>
+                                                                <div className="text-sm font-semibold">Fecha de compra</div>
                                                                 <div className="text-sm font-medium text-gray-900">{date}</div>
                                                             </div>
 
                                                             <div className="mb-4">
-                                                                <div className="text-sm font-semibold">Total Amount</div>
+                                                                <div className="text-sm font-semibold">Total</div>
                                                                 <div className="text-sm font-medium text-gray-900">$ {price * quantity}</div>
                                                             </div>
 
                                                             <div className="mb-4">
-                                                                <div className="text-sm font-semibold">Order Status</div>
+                                                                <div className="text-sm font-semibold">Estatus</div>
                                                                 {status === 'pending' ?
                                                                     <div className="text-sm font-medium text-red-800 first-letter:uppercase">{status}</div>
                                                                     : <div className="text-sm font-medium text-green-800 first-letter:uppercase">{status}</div>
@@ -139,7 +139,7 @@ const UserDashboard = () => {
                                                                 </div>
 
                                                                 <div className="ml-auto flex flex-col items-end justify-between">
-                                                                    <p className="text-right text-sm font-bold text-gray-900">₹ {price}</p>
+                                                                    <p className="text-right text-sm font-bold text-gray-900">$ {price}</p>
                                                                 </div>
                                                             </li>
                                                         </ul>

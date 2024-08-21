@@ -50,7 +50,7 @@ const Navbar = () => {
             </li>}
 
             <li >
-                <Link to={'/cart'}>
+                <Link to={user ? '/cart' : '/login'}>
                     <div className="flex">
                         <img src="../img/Carrito.png" alt="carrito" />
                         <span className="relative top-8 text-red font-Lustria font-bold">{cartItems.length}</span>
