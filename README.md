@@ -34,14 +34,6 @@ pass: 123456
 - UI Desing in figma: [Israel Chacon](https://github.com/IsraelChacon).
 - Frontend developement: [Dilan Garcia](https://github.com/Dilan03).
 
-## **Installation Instructions**
-To play *Deroached*, follow these steps:
-
-1. Click the provided download [Link](https://dregen-erado.itch.io/deroached).
-2. Download the **DEROACHED.zip** file.
-3. Extract the contents of the zip file.
-4. Double-click **DEROACHED.exe** to start the game.
-
 ## Installation Guide
 
 To set up and run the e-commerce bookstore project locally, follow these steps:
