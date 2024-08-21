@@ -1,7 +1,7 @@
 # **E-libreria**
 
 This is a e-commerce bookstore application for the software project management class. 
-[Visit site](https://e-libreria-46b75.web.app/)
+[App running](https://e-libreria-46b75.web.app/)
 
 ## Features
 
